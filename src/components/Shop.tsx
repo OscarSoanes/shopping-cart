@@ -1,7 +1,7 @@
 export function Shop({type}: {type: string}) {
   return (
-    <div>
+    <main>
       <h1>Shop Page!! {type}</h1>
-    </div>
+    </main>
   )
 }

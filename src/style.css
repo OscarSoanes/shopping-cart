@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+  height: 100svh;
+  height: 100vh;
+}
+
+#root, .app {
+  min-height: 100vh;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  gap: 4rem;
+}
+
+main, footer {
+  width: min(100ch, calc(100% - 4rem));
+  margin-inline: auto;
+}
