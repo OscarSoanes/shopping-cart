@@ -1,0 +1,202 @@
+[
+  {
+    "id": 0,
+    "name": "White Slub Crew T-shirt",
+    "brand": "Mantaray",
+    "for": "men",
+    "price": 14.40,
+    "image": "0.webp",
+    "description": "Slub crew neck tee from Mantaray. A cut above your average T-shirt, this style features a slub texture all-over for a fresh dose of modern appeal. Crafted from a soft 100% cotton to ensure day long comfort, whether you wear this tee as a base layer or as the main event.",
+    "alternate-images": ["0_1.webp", "0_2.webp", "0_3.webp", "0_4.webp"]
+  },
+  {
+    "id": 1,
+    "name": "Wine Slub Crew T-shirt",
+    "brand": "Mantaray",
+    "for": "men",
+    "price": 14.40,
+    "image": "1.webp",
+    "description": "Slub crew neck tee from Mantaray. A cut above your average T-shirt, this style features a slub texture all-over for a fresh dose of modern appeal. Crafted from a soft 100% cotton to ensure day long comfort, whether you wear this tee as a base layer or as the main event.",
+    "alternate-images": ["1_1.webp", "1_2.webp", "1_3.webp", "1_4.webp"]
+  },
+  {
+    "id": 2,
+    "name": "Boba Fett Emb Mens T-shirt",
+    "brand": "Star Wars",
+    "for": "men",
+    "price": 16.80,
+    "image": "2.webp",
+    "description": "Official licensed Star Wars with original design. High quality garment, true to size fit and designed to last. A casualwear essential for every Star Wars fan and an absolute must-have for the latest film releases from the iconic franchise. Including bold graphic prints and premium embroideries of all your favourite characters, this collection is for the mega movie fanatics who can’t get enough of the Galactic Empire.",
+    "alternate-images": ["2_1.webp", "2_2.webp", "2_3.webp"]
+  },
+  {
+    "id": 3,
+    "name": "Ford Motor Co Mens T-shirt",
+    "brand": "Ford",
+    "for": "men",
+    "price": 10.80,
+    "image": "3.webp",
+    "description": "Genuine Ford merchandise with original design. Made from high quality material, these products are true to size and designed to last.",
+    "alternate-images": ["3_1.webp", "3_2.webp"]
+  },
+  {
+    "id": 4,
+    "name": "Ss Natural Dye Tshirt",
+    "brand": "Lee",
+    "for": "men",
+    "price": 12.50,
+    "image": "4.webp",
+    "description": "Ss Natural Dye T-shirt. Elevate your men's wardrobe with striking styles crafted from soft fabrics and look to this must-have T-shirt. Featuring short-cut sleeves, a circular neckline, and an eye-catching tie dye print finish. Coordinate with jeans and wear with classic trainers.",
+    "alternate-images": ["4_1.webp", "4_2.webp", "4_3.webp", "4_4.webp"]
+  },
+  {
+    "id": 5,
+    "name": "Textured Stripe Tee",
+    "brand": "Mantaray",
+    "for": "men",
+    "price": 14.00,
+    "image": "5.webp",
+    "description": "Textured Stipe Tee from Mantaray. Refined in style and crafted from premium fabrics, look to this stripe tee for men. Featuring short-cut sleeves, a circular cut neckline, stripe detailing and a tailored cut finish.",
+    "alternate-images": ["5_1.webp", "5_2.webp", "5_3.webp"]
+  },
+  {
+    "id": 6,
+    "name": "Martin Tee",
+    "brand": "Lyle & Scott",
+    "for": "men",
+    "price": 20.00,
+    "image": "6.webp",
+    "description": "Martin Tee",
+    "alternate-images": ["6_1.webp", "6_2.webp", "6_3.webp"]
+  },
+  {
+    "id": 7,
+    "name": "Guinness",
+    "brand": "Harp Mens T-shirt",
+    "for": "men",
+    "price": 13.59,
+    "image": "7.webp",
+    "description": "Genuine Guinness merchandise with original design. Made from high quality material, these products are true to size and designed to last.",
+    "alternate-images": ["7_1.webp", "7_2.webp", "7_3.webp"]
+  },
+  {
+    "id": 8,
+    "name": "Petrol Heads",
+    "brand": "Fast & Furious Logo Mens T-Shirt",
+    "for": "men",
+    "price": 16.99,
+    "image": "8.webp",
+    "description": "Genuine Petrol Heads merchandise with original design. Made from high quality material, these products are true to size and designed to last.",
+    "alternate-images": ["8_1.webp", "8_2.webp", "8_3.webp"]
+  },
+  {
+    "id": 9,
+    "name": "DC Comics",
+    "brand": "Superman Logo Cotton T-Shirt",
+    "for": "men",
+    "price": 13.59,
+    "image": "9.webp",
+    "description": "Official licensed DC Comics mens cotton t-shirt with original design. High quality garment, true to size fit and designed to last. A casualwear essential for every DC Comics fan and an absolute must-have for the latest film releases from the iconic franchise. Including bold graphic prints and premium embroideries of all your favourite superheroes and villains, this collection is for the mega movie fanatics and comic book enthusiasts who can’t get enough of the DC Universe.",
+    "alternate-images": ["9_1.webp", "9_2.webp", "9_3.webp", "9_4.webp"]
+  },
+  {
+    "id": 10,
+    "name": "Mantaray",
+    "brand": "Off White Pure Cotton Slub Y Neck T-shirt",
+    "for": "men",
+    "price": 25.20,
+    "image": "10.webp",
+    "description": "Slub Y-neck T-shirt from Mantaray. Refresh your T-shirt collection for the new season with this summer wardrobe essential. In a supremely soft 100% cotton fabric, this tee has been designed for a relaxed, regular fit with a comfortable crew neckline. Perfect worn alone or layered up under a short sleeve shirt or overshirt.",
+    "alternate-images": ["10_1.webp", "10_2.webp", "10_3.webp", "10_4.webp"]
+  },
+  {
+    "id": 11,
+    "name": "Oasis",
+    "brand": "Blue Essential Cotton Animal Roll Sleeve Slub T-shirt",
+    "for": "women",
+    "price": 18.00,
+    "image": "11.webp",
+    "description": "This garment is part of our Conscious Clothing rangeFind out more about our material goalsThe Boohoo Group are members of Better Cotton. By choosing our cotton products, you’re supporting Boohoo Groups investment in Better Cotton’s mission.This product is sourced via a system of mass balance and therefore may not contain Better Cotton. Learn more at bettercotton.org/massbalance.Conscious Clothing Guidelines",
+    "alternate-images": ["11_1.webp", "11_2.webp", "11_3.webp"]
+  },
+  {
+    "id": 12,
+    "name": "boohoo",
+    "brand": "Blue Stripe Shirt",
+    "for": "women",
+    "price": 16.50,
+    "image": "12.webp",
+    "description": "New chapter outfits are here, but just because the season is changing doesn't mean the classics are. Timeless trends are timeless for a reason, and a women's striped shirt never goes out of style. Whether vertical or horizontal, stripes are always in season. Practical and versatile, there's no limit to a striped shirt, with smart or casual occasions totally catered for. It's all about the accessorising and the powers in your hands. Dress this wardrobe staple up or down and make a statement at any occasion.",
+    "alternate-images": ["12_1.webp", "12_2.webp", "12_3.webp"]
+  },
+  {
+    "id": 13,
+    "name": "Dorothy Perkins",
+    "brand": "Petite Cotton Mono T-Shirt",
+    "for": "women",
+    "price": 7.56,
+    "image": "13.webp",
+    "description": "The staple you'll turn to time and time again. Discover our collection of t-shirts for women and find the fit for you. Whether you're into cute slogan tees, simple styles or bright pops of colour, we've got a selection of colourways and mood-boosting prints. From plain t-shirts and crop tops to oversized fits, polos and bodysuits, we've got tees to suit everyone.",
+    "alternate-images": ["13_1.webp", "13_2.webp", "13_3.webp"]
+  },
+  {
+    "id": 14,
+    "name": "Oasis",
+    "brand": "Pink Essential Cotton Stripe Roll Sleeve Slub T-shirt",
+    "for": "women",
+    "price": 18.00,
+    "image": "14.webp",
+    "description": "This garment is part of our Conscious Clothing rangeFind out more about our material goalsThe Boohoo Group are members of Better Cotton. By choosing our cotton products, you’re supporting Boohoo Groups investment in Better Cotton’s mission.This product is sourced via a system of mass balance and therefore may not contain Better Cotton. Learn more at bettercotton.org/massbalance.Conscious Clothing Guidelines",
+    "alternate-images": ["14_1.webp", "14_2.webp"]
+  },
+  {
+    "id": 15,
+    "name": "Dorothy Perkins",
+    "brand": "White Broderie Back Detail T-shirt",
+    "for": "women",
+    "price": 22.50,
+    "image": "15.webp",
+    "description": "The staple you'll turn to time and time again. Discover our collection of t-shirts for women and find the fit for you. Whether you're into cute slogan tees, simple styles or bright pops of colour, we've got a selection of colourways and mood-boosting prints. From plain t-shirts and crop tops to oversized fits, polos and bodysuits, we've got tees to suit everyone.",
+    "alternate-images": ["15_1.webp", "15_2.webp"]
+  },
+  {
+    "id": 16,
+    "name": "Oasis",
+    "brand": "Green Essential Cotton 3/4 Sleeve Slash Neck Jersey Top",
+    "for": "women",
+    "price": 16.20,
+    "image": "16.webp",
+    "description": "Beautifully crafted using more sustainable cotton, this top is a timeless addition to wear-forever wardrobes. An essential everyday hero, it's designed in a regular fit with a slash neckline and 3/4 length sleeves. Model wears a size 10.",
+    "alternate-images": ["16_1.webp", "16_2.webp", "16_3.webp"]
+  },
+  {
+    "id": 17,
+    "name": "Oasis",
+    "brand": "Black Essential Cotton 3/4 Sleeve Slash Neck Jersey Top",
+    "for": "women",
+    "price": 16.20,
+    "image": "17.webp",
+    "description": "Beautifully crafted using more sustainable cotton, this top is a timeless addition to wear-forever wardrobes. An essential everyday hero, it's designed in a regular fit with a slash neckline and 3/4 length sleeves. Model wears a size 10.",
+    "alternate-images": ["17_1.webp", "17_2.webp", "17_3.webp"]
+  },
+  {
+    "id": 18,
+    "name": "NastyGal",
+    "brand": "Fleetwood Mac Graphic T-Shirt",
+    "for": "women",
+    "price": 15.60,
+    "image": "18.webp",
+    "description": "Sister of the moon. This t-shirt features a crew neckline, oversized silhouette, and 'Fleetwood Mac, Intense silence as she walked into the room. Sister of the Moon. Her black dressing gowns trailing sister of the moon' graphic at front. Model is 5'11 and wears a US size 12/UK size 16. Feel the music - it's time to shop festival outfits. Keep it cute in boho clothing or hit the pit in rave outfits designed to thrill. We'll see you backstage.",
+    "alternate-images": ["18_1.webp", "18_2.webp", "18_3.webp"]
+  },
+  {
+    "id": 19,
+    "name": "NastyGal",
+    "brand": "Skeleton Lovers Graphic Tshirt",
+    "for": "women",
+    "price": 12.00,
+    "image": "19.webp",
+    "description": "Tarot please. Style our t-shirt with a mini skirt or leather pants for an edgy look. Skeleton Lovers Graphic Tshirt Graphic T shirt Tarot Card Design Skeleton Lovers Drop Shoulders Model wears a size M (US size 6/UK size 10).",
+    "alternate-images": ["19_1.webp", "19_2.webp", "19_3.webp"]
+  }
+]
