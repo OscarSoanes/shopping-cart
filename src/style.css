@@ -17,7 +17,7 @@ html, body {
   gap: 4rem;
 }
 
-main, footer {
+header, main, footer {
   width: min(100ch, calc(100% - 4rem));
   margin-inline: auto;
 }
