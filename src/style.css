@@ -18,6 +18,6 @@ html, body {
 }
 
 header, main, footer {
-  width: min(100ch, calc(100% - 4rem));
+  width: min(100ch, calc(100% - 2rem));
   margin-inline: auto;
 }
