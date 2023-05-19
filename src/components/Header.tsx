@@ -1,28 +1,59 @@
 import { useState } from "react";
 import { HeaderLink } from "./HeaderLink";
-import { BsFillBasket2Fill } from "react-icons/bs";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from "react-router-dom";
+
+import {
+  AiOutlineSearch,
+  AiOutlineHeart,
+  AiOutlineShopping,
+} from "react-icons/ai";
+
+import { TbListSearch } from "react-icons/tb";
+
 export default function Header() {
   const [showMobile, setShowMobile] = useState(false);
 
   return (
-    <header className='flex justify-between gap-2 items-center'>
-      <h1 className='text-xl font-bold'>TeeFusion</h1>
+    <header className='flex justify-between px-8 gap-8 items-center bg-white py-4'>
+      <TbListSearch className='sm:hidden' />
 
-      <RxHamburgerMenu
-        className='sm:hidden'
-        onClick={() => setShowMobile(!showMobile)}
-      />
+      <Link to='/' className='font-oswald font-extrabold text-2xl'>
+        TeeFusion
+      </Link>
 
-      <div className={`${showMobile ? "flex" : "hidden"} sm:flex gap-4`}>
-        <HeaderLink to='shop/men' text='Men' />
-        <HeaderLink to='shop/women' text='Women' />
-      </div>
+      <nav className='flex justify-around grow items-center'>
+        <div className='flex gap-8'>
+          <HeaderLink to='/shop/women' text='Women' />
+          <HeaderLink to='/shop/men' text='Men' />
+        </div>
 
-      <div className='flex items-center gap-1'>
-        <BsFillBasket2Fill />
-        <p>0</p>
-      </div>
+        <form className='border bg-gray-200 flex p-1 rounded focus-within:outline outline-black outline-2'>
+          <label htmlFor='search'>
+            <span className='hidden'>Search Product</span>
+            <input
+              type='text'
+              name='search'
+              id='search'
+              className='bg-gray-200 focus:outline-none'
+            />
+          </label>
+
+          <button type='submit'>
+            <AiOutlineSearch className='header-icon' />
+          </button>
+        </form>
+
+        <button className='not-built'>Sign In/ Register</button>
+      </nav>
+
+      <nav className='flex gap-4'>
+        <button className='not-built' aria-label='Wishlist'>
+          <AiOutlineHeart className='header-icon' />
+        </button>
+        <button aria-label='Basket'>
+          <AiOutlineShopping className='header-icon' />
+        </button>
+      </nav>
     </header>
   );
 }

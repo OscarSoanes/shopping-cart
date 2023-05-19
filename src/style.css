@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 
 html, body {
   height: 100svh;
@@ -13,11 +14,13 @@ html, body {
 
 .app {
   display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  gap: 4rem;
+  grid-template-rows: max-content min-content 1fr min-content;
 }
 
-header, main, footer {
-  width: min(100ch, calc(100% - 2rem));
-  margin-inline: auto;
+.header-icon {
+  @apply w-6 h-6;
+}
+
+.not-built {
+  @apply cursor-not-allowed;
 }

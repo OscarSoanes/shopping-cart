@@ -4,11 +4,13 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/Home";
 import { Shop } from "./components/Shop";
 import { NoPage } from "./components/NoPage";
+import { Promo } from "./components/Promo";
 
 function App() {
   return (
     <div className='app bg-background'>
       <Router>
+        <Promo />
         <Header />
         <Routes>
           <Route path='/shop' element={<Shop type='all' />} />

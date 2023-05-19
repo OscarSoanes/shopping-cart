@@ -9,6 +9,9 @@ module.exports = {
         primaryButton: "#533d66",
         secondaryButton: "#e5e5e0",
         container: "#ffffff"
+      },
+      fontFamily: {
+        'oswald': ['Oswald', 'sans-serif']
       }
     },
   },
