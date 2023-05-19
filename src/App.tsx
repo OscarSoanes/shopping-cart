@@ -8,17 +8,18 @@ import { NoPage } from './components/NoPage';
 function App() {
   return (
     <div className="App">
-      <Header />
       
       <Router>
+        <Header />
         <Routes>
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop" element={<Shop type="all"/>} />
+          <Route path="/shop/men" element={<Shop type="men"/>} />
+          <Route path="/shop/women" element={<Shop type="women"/>} />
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
+        <Footer />
       </Router>
-
-      <Footer />
     </div>
   );
 }
