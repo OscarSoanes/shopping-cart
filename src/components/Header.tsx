@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import {BsFillBasket2Fill} from "react-icons/bs"
+import { HeaderLink } from "./HeaderLink";
+import { BsFillBasket2Fill } from "react-icons/bs";
 
 export default function Header() {
   return (
@@ -7,9 +7,8 @@ export default function Header() {
       <h1>TeeFusion</h1>
 
       <div>
-        <Link to="shop">Shop</Link>
-        <Link to="shop/men">Men</Link>
-        <Link to="shop/women">Women</Link>
+        <HeaderLink to='shop/men' text='Men' />
+        <HeaderLink to='shop/women' text='Women' />
       </div>
 
       <div>
@@ -17,5 +16,5 @@ export default function Header() {
         <p>0</p>
       </div>
     </header>
-  )
+  );
 }
