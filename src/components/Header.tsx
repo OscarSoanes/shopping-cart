@@ -66,8 +66,18 @@ export default function Header() {
             showMobile && "flex-col text-center mx-auto text-2xl"
           } flex gap-8`}
         >
-          <HeaderLink to='/shop/women' text='Women' mobile={showMobile} />
-          <HeaderLink to='/shop/men' text='Men' mobile={showMobile} />
+          <HeaderLink
+            to='/shop/women'
+            text='Women'
+            mobile={showMobile}
+            onClick={setShowMobile}
+          />
+          <HeaderLink
+            to='/shop/men'
+            text='Men'
+            mobile={showMobile}
+            onClick={setShowMobile}
+          />
         </div>
 
         <form
