@@ -24,7 +24,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className='flex justify-between px-8 gap-8 items-center bg-white py-4'>
+    <header className='flex justify-between px-8 gap-2 items-center py-4 sticky top-0 z-50 backdrop-blur-md bg-white/70 shadow'>
       <button className='md:hidden' onClick={() => setShowMobile(true)}>
         <TbListSearch className='header-icon' />
       </button>
@@ -36,8 +36,8 @@ export default function Header() {
       <nav
         className={`md:flex md:justify-around ${
           showMobile
-            ? "flex flex-col gap-4 absolute top-0 left-0 h-full w-screen sm:w-96 bg-gray-100 p-4"
-            : "hidden justify-around grow items-center"
+            ? "flex flex-col absolute gap-4 top-0 left-0 h-full w-screen sm:w-96 bg-gray-100 p-4"
+            : "hidden justify-around grow items-center gap-2"
         }`}
         id='menu'
       >
