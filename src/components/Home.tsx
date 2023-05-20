@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function HomePage() {
   return (
     <main>
-      <section className='flex gap-1 relative'>
+      <section className='flex gap-1 relative box-border'>
         <HomeImageContainer src={WomenSide} alt='Shop Women' />
         <HomeImageContainer src={MenSide} alt='Shop Men' />
       </section>

@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 export function HomeImageContainer({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className='sm:relative'>
+    <div className='sm:relative flex-1'>
       <img
         src={src}
         alt={alt}
-        className='w-[50vw] object-cover object-top h-full'
+        className='w-full min-h-screen object-cover object-center h-full'
       />
       <Link
         to={`${alt === "Shop Women" ? "/shop/women" : "/shop/men"}`}
