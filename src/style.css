@@ -24,3 +24,8 @@ html, body {
 .not-built {
   @apply cursor-not-allowed;
 }
+
+.aside-nav {
+  height: calc(100vh);
+  height: calc(100svh);
+}

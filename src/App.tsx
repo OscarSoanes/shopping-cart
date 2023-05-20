@@ -10,8 +10,10 @@ function App() {
   return (
     <div className='app bg-background'>
       <Router>
-        <Promo />
-        <Header />
+        <div className='sticky z-50 top-0'>
+          <Promo />
+          <Header />
+        </div>
         <Routes>
           <Route path='/shop' element={<Shop type='all' />} />
           <Route path='/shop/men' element={<Shop type='men' />} />
