@@ -10,7 +10,7 @@ export function HeaderLink({
   mobile: boolean;
 }) {
   return (
-    <Link to={to} className={`${!mobile && "w-16"}hover:font-semibold`}>
+    <Link to={to} className={`${!mobile && "w-16"} hover:font-semibold`}>
       {text}
     </Link>
   );

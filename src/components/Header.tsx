@@ -94,7 +94,7 @@ export default function Header() {
 
         <button
           className={`${
-            showMobile ? "flex-grow text-2xl" : "w-32"
+            showMobile ? "text-2xl justify-self-end mt-auto" : "w-32"
           } not-built hover:font-semibold`}
         >
           Sign In/ Register
