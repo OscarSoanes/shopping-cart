@@ -80,7 +80,7 @@ function SmallLink({ locations }: { locations: Array<String> }) {
       {locations.map((location, index) => (
         <li
           key={index}
-          className='cursor-not-allowed bg-gray-50 p-1 rounded hover:bg-gray-100 w-48'
+          className='cursor-not-allowed bg-gray-50 p-1 rounded hover:bg-gray-100 w-32 sm:w-48'
         >
           {location}
         </li>
