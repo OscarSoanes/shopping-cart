@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { HeaderLink } from "./HeaderLink";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   AiOutlineSearch,
@@ -13,12 +13,22 @@ import Banner from "../media/banner.webp";
 
 export default function Header() {
   const [showMobile, setShowMobile] = useState(false);
+  const navigate = useNavigate();
 
   function handleResize() {
     if (window.innerWidth > 840) {
       setShowMobile(false);
     }
   }
+
+  function handleForm(e: FormEvent) {
+    e.preventDefault();
+    const input = document.getElementById("search") as HTMLInputElement;
+    const query = input.value;
+
+    navigate(`/search/${query}`);
+  }
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
   }, []);
@@ -84,6 +94,7 @@ export default function Header() {
           className={`${
             showMobile && "-order-1 w-max mx-auto"
           } border bg-gray-200 flex rounded-sm focus-within:outline outline-black outline-2`}
+          onSubmit={(event) => handleForm(event)}
         >
           <label htmlFor='search'>
             <span className='hidden'>Search Product</span>
