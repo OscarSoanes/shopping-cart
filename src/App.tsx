@@ -6,6 +6,7 @@ import { Shop } from "./components/Shop";
 import { NoPage } from "./components/NoPage";
 import { Promo } from "./components/Promo";
 import { Search } from "./components/Search";
+import { Product } from "./components/Product";
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
           <Route path='/shop/men' element={<Shop type='men' />} />
           <Route path='/shop/women' element={<Shop type='women' />} />
           <Route path='/search/*' element={<Search />} />
+          <Route path='/product/*' element={<Product />} />
           <Route path='/' element={<HomePage />} />
           <Route path='*' element={<NoPage />} />
+          <Route path='/404' element={<NoPage />} />
         </Routes>
         <Footer />
       </Router>
