@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkshopping_cart=self.webpackChunkshopping_cart||[]).push([[1650],{1650:function(e,p,c){e.exports=c.p+"static/media/3_2.fc792ec9a90f6e064d36.webp"}}]);
