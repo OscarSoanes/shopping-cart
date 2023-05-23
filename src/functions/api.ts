@@ -5,5 +5,5 @@ export function getAllByGender(gender: string) {
 }
 
 export function getAllBySearch(query: string) {
-  return products.filter((product) => product.name.toLowerCase().includes(query) || product.brand.toLowerCase().includes(query))
+  return products.filter((product) => product.name.toLowerCase().includes(query.toLowerCase()) || product.brand.toLowerCase().includes(query.toLowerCase()))
 }
