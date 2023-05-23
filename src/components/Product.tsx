@@ -95,19 +95,19 @@ export function Product() {
                 {index !== 0 && (
                   <button
                     title='Scroll to previous image?'
-                    className='md:hidden md:aria-hidden absolute bottom-4 left-2 bg-white p-2 rounded '
+                    className='md:hidden md:aria-hidden absolute bottom-4 left-2 bg-white p-2 rounded text-3xl'
                     onClick={(e) => changeSlider(e, "-")}
                   >
-                    <AiOutlineArrowLeft className='text-5x' />
+                    <AiOutlineArrowLeft />
                   </button>
                 )}
                 {index !== images.length - 1 && (
                   <button
                     title='Scroll to next image?'
-                    className='md:hidden md:aria-hidden absolute bottom-4 right-2 bg-white p-2 rounded'
+                    className='md:hidden md:aria-hidden absolute bottom-4 right-2 bg-white p-2 rounded text-3xl'
                     onClick={(e) => changeSlider(e, "+")}
                   >
-                    <AiOutlineArrowRight className='text-5x' />
+                    <AiOutlineArrowRight />
                   </button>
                 )}
               </div>
