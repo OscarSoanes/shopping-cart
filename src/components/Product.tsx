@@ -41,6 +41,23 @@ export function Product() {
     });
   }, [data]);
 
+  function changeSlider(e: React.MouseEvent, calc: String) {
+    console.log(e);
+    const eventTarget = e.target as HTMLElement;
+    const id = parseInt(eventTarget.closest("div")!.getAttribute("id")!);
+
+    const width = window.innerWidth;
+
+    // Calculates the movement from start position based on id
+    const calculation = calc === "+" ? (id + 1) * width : (id - 1) * width;
+
+    const container = document.getElementById("overflow-container");
+    container?.scroll(calculation, 0);
+
+    console.log(calculation);
+    // temp1.scroll(478 * parseInt(3), 0)
+  }
+
   return (
     data.name && (
       <main className='md:py-4 md:px-8'>
@@ -59,11 +76,15 @@ export function Product() {
         </p>
 
         <div className='grid md:grid-cols-3 gap-8'>
-          <section className='flex md:col-span-2 md:grid images gap-2 overflow-x-auto overflow-ellipsis snap-x snap-mandatory'>
+          <section
+            className='flex md:col-span-2 md:grid images gap-2 overflow-x-auto overflow-ellipsis snap-x snap-mandatory'
+            id='overflow-container'
+          >
             {images.map((image, index) => (
               <div
                 className='min-w-[100vw] snap-center relative md:min-w-full'
                 key={index}
+                id={`${index}`}
               >
                 <img
                   src={image}
@@ -72,10 +93,22 @@ export function Product() {
                 />
 
                 {index !== 0 && (
-                  <AiOutlineArrowLeft className='absolute bottom-4 left-2 text-5xl bg-white p-2 rounded md:hidden' />
+                  <button
+                    title='Scroll to previous image?'
+                    className='md:hidden md:aria-hidden absolute bottom-4 left-2 bg-white p-2 rounded '
+                    onClick={(e) => changeSlider(e, "-")}
+                  >
+                    <AiOutlineArrowLeft className='text-5x' />
+                  </button>
                 )}
                 {index !== images.length - 1 && (
-                  <AiOutlineArrowRight className='absolute bottom-4 right-2 text-5xl bg-white p-2 rounded md:hidden' />
+                  <button
+                    title='Scroll to next image?'
+                    className='md:hidden md:aria-hidden absolute bottom-4 right-2 bg-white p-2 rounded'
+                    onClick={(e) => changeSlider(e, "+")}
+                  >
+                    <AiOutlineArrowRight className='text-5x' />
+                  </button>
                 )}
               </div>
             ))}
