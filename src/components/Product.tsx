@@ -61,7 +61,10 @@ export function Product() {
         <div className='grid md:grid-cols-3 gap-8'>
           <section className='flex md:col-span-2 md:grid images gap-2 overflow-x-auto overflow-ellipsis snap-x snap-mandatory'>
             {images.map((image, index) => (
-              <div className='min-w-[100vw] snap-center relative md:min-w-full'>
+              <div
+                className='min-w-[100vw] snap-center relative md:min-w-full'
+                key={index}
+              >
                 <img
                   src={image}
                   alt={`${index + 1}. ${data.name} ${data.brand}`}
