@@ -10,7 +10,7 @@ export function Shop({ type }: { type: string }) {
   }, [type]);
 
   return (
-    <main>
+    <main className='pt-4 p-8'>
       <div>
         <h2>{type}'s T-Shirts & Tops</h2>
         <p>{data.length} Items</p>

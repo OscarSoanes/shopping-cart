@@ -29,3 +29,7 @@ html, body {
   height: calc(100vh);
   height: calc(100svh);
 }
+
+.products {
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+}
