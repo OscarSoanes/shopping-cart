@@ -45,11 +45,14 @@ export function Product() {
     data.name && (
       <main className='md:py-4 md:px-8'>
         <p className='flex gap-4 py-4 px-8 md:px-0 md:py-2 text-gray-600'>
-          <Link to='/' className='hover:text-gray-700'>
+          <Link to='/' className='hover:text-gray-700 underline'>
             Home
           </Link>{" "}
           -{" "}
-          <Link to={`/shop/${data.for}`} className='hover:text-gray-700'>
+          <Link
+            to={`/shop/${data.for}`}
+            className='hover:text-gray-700 underline'
+          >
             {data.for.charAt(0).toUpperCase()}
             {data.for.substring(1)}
           </Link>
@@ -58,7 +61,7 @@ export function Product() {
         <div className='grid md:grid-cols-3 gap-8'>
           <section className='flex md:col-span-2 md:grid images gap-2 overflow-x-auto overflow-ellipsis snap-x snap-mandatory'>
             {images.map((image, index) => (
-              <div className='min-w-[100vw] snap-center relative'>
+              <div className='min-w-[100vw] snap-center relative md:min-w-full'>
                 <img
                   src={image}
                   alt={`${index + 1}. ${data.name} ${data.brand}`}
@@ -66,10 +69,10 @@ export function Product() {
                 />
 
                 {index !== 0 && (
-                  <AiOutlineArrowLeft className='absolute bottom-4 left-2 text-5xl bg-white p-2 rounded' />
+                  <AiOutlineArrowLeft className='absolute bottom-4 left-2 text-5xl bg-white p-2 rounded md:hidden' />
                 )}
                 {index !== images.length - 1 && (
-                  <AiOutlineArrowRight className='absolute bottom-4 right-2 text-5xl bg-white p-2 rounded' />
+                  <AiOutlineArrowRight className='absolute bottom-4 right-2 text-5xl bg-white p-2 rounded md:hidden' />
                 )}
               </div>
             ))}
