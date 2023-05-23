@@ -53,6 +53,7 @@ export default function HomePage() {
             name='email'
             id='email'
             placeholder='Email Address'
+            disabled
             className='bg-transparent border w-full placeholder-white p-2 px-4 placeholder:italic cursor-not-allowed sm:w-96'
           />
 
