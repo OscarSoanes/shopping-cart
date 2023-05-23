@@ -15,15 +15,18 @@ export function ProductContainer({ product }: any) {
   }, [product.image]);
 
   return (
-    <Link to={`/product/${product.id}`}>
-      {image && <img src={image} alt={`${product.name} ${product.brand}`} />}
-      <div>
-        <p>{product.brand}</p>
-        <p>{product.name}</p>
-        <p>£{product.price.toFixed(2)}</p>
-      </div>
+    <div className='relative'>
+      <Link to={`/product/${product.id}`}>
+        {image && <img src={image} alt={`${product.name} ${product.brand}`} />}
 
-      <AiOutlineHeart />
-    </Link>
+        <div className='px-4 py-2'>
+          <p className='text-gray-700 font-semibold'>{product.brand}</p>
+          <p>{product.name}</p>
+          <p className='font-bold'>£{product.price.toFixed(2)}</p>
+        </div>
+
+        <AiOutlineHeart className='absolute top-4 text-3xl right-4' />
+      </Link>
+    </div>
   );
 }
