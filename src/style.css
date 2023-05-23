@@ -33,3 +33,9 @@ html, body {
 .products {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
+
+@media (min-width: 840px) {
+  .images {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
