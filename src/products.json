@@ -121,8 +121,8 @@
   },
   {
     "id": 12,
-    "name": "boohoo",
-    "brand": "Blue Stripe Shirt",
+    "name": "Blue Stripe Shirt",
+    "brand": "boohoo",
     "for": "women",
     "price": 16.50,
     "image": "12.webp",
