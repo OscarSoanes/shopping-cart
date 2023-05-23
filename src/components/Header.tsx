@@ -25,6 +25,7 @@ export default function Header() {
     e.preventDefault();
     const input = document.getElementById("search") as HTMLInputElement;
     const query = input.value;
+    input.value = "";
 
     navigate(`/search/${query}`);
   }
@@ -104,11 +105,11 @@ export default function Header() {
               id='search'
               className={`${
                 showMobile && ""
-              }bg-gray-200 focus:outline-none p-2 pr-0`}
+              }bg-gray-200 focus:outline-none p-2 pr-0 lg:w-72`}
             />
           </label>
 
-          <button type='submit' className='pr-2'>
+          <button type='submit' className='px-2'>
             <AiOutlineSearch className='header-icon' />
           </button>
         </form>

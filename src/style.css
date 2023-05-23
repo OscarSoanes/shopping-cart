@@ -14,7 +14,7 @@ html, body {
 
 .app {
   display: grid;
-  grid-template-rows: max-content min-content 1fr min-content;
+  grid-template-rows: max-content 1fr min-content;
 }
 
 .header-icon {
@@ -31,5 +31,5 @@ html, body {
 }
 
 .products {
-  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
