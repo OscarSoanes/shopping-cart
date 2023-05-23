@@ -5,6 +5,7 @@ import HomePage from "./components/Home";
 import { Shop } from "./components/Shop";
 import { NoPage } from "./components/NoPage";
 import { Promo } from "./components/Promo";
+import { Search } from "./components/Search";
 
 function App() {
   return (
@@ -15,9 +16,9 @@ function App() {
           <Header />
         </div>
         <Routes>
-          <Route path='/shop' element={<Shop type='all' />} />
           <Route path='/shop/men' element={<Shop type='men' />} />
           <Route path='/shop/women' element={<Shop type='women' />} />
+          <Route path='/search/*' element={<Search />} />
           <Route path='/' element={<HomePage />} />
           <Route path='*' element={<NoPage />} />
         </Routes>
