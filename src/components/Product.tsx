@@ -2,7 +2,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { getById } from "../functions/api";
 import { useEffect, useState } from "react";
 
-import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 export function Product() {
   const params = useParams();
@@ -58,11 +58,20 @@ export function Product() {
         <div className='grid md:grid-cols-3 gap-8'>
           <section className='flex md:col-span-2 md:grid images gap-2 overflow-x-auto overflow-ellipsis snap-x snap-mandatory'>
             {images.map((image, index) => (
-              <img
-                src={image}
-                alt={`${index + 1}. ${data.name} ${data.brand}`}
-                className='snap-center w-full'
-              />
+              <div className='min-w-[100vw] snap-center relative'>
+                <img
+                  src={image}
+                  alt={`${index + 1}. ${data.name} ${data.brand}`}
+                  className=''
+                />
+
+                {index !== 0 && (
+                  <AiOutlineArrowLeft className='absolute bottom-4 left-2 text-5xl bg-white p-2 rounded' />
+                )}
+                {index !== images.length - 1 && (
+                  <AiOutlineArrowRight className='absolute bottom-4 right-2 text-5xl bg-white p-2 rounded' />
+                )}
+              </div>
             ))}
           </section>
 
