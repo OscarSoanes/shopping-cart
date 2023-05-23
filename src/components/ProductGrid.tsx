@@ -8,7 +8,7 @@ export function ProductGrid({ data }: { data: Array<object> }) {
           <ProductContainer key={product.id} product={product} />
         ))
       ) : (
-        <p>Loading...</p>
+        <p className='text-center text-xl'>Loading...</p>
       )}
     </div>
   );
