@@ -10,7 +10,7 @@ import { Product } from "./components/Product";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [basket, setBasket] = useState([{}]);
+  const [basket, setBasket] = useState(Array<Object>);
 
   function setItemToBasket(productId: string, size: string, quantity: string) {
     const newProduct = { id: productId, size: size, quantity: quantity };
@@ -20,7 +20,9 @@ function App() {
   }
 
   useEffect(() => {
-    localStorage.setItem("basket", JSON.stringify(basket));
+    if (basket.length !== 0) {
+      localStorage.setItem("basket", JSON.stringify(basket));
+    }
   }, [basket]);
 
   useEffect(() => {
