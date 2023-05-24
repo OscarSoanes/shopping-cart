@@ -44,6 +44,12 @@ function App() {
     setBasket(remainingProducts);
   }
 
+  function checkout() {
+    console.log("checking out");
+    setBasket([]);
+    localStorage.setItem("basket", JSON.stringify([]));
+  }
+
   useEffect(() => {
     if (basket.length !== 0) {
       localStorage.setItem("basket", JSON.stringify(basket));
@@ -72,7 +78,12 @@ function App() {
           <Route
             path='/basket'
             element={
-              <Basket basket={basket} updateBasket={updateBasket} deleteProduct={deleteProduct} />
+              <Basket
+                basket={basket}
+                updateBasket={updateBasket}
+                deleteProduct={deleteProduct}
+                checkoutBasket={checkout}
+              />
             }
           />
           <Route path='/' element={<HomePage />} />

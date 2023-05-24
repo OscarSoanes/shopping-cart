@@ -2,18 +2,22 @@ import { useEffect, useState } from "react";
 import { BasketInterface } from "../functions/basket";
 import { BasketComponent } from "./BasketComponent";
 import { getById } from "../functions/api";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export function Basket({
   basket,
   updateBasket,
   deleteProduct,
+  checkoutBasket,
 }: {
   basket: Array<BasketInterface>;
   updateBasket: Function;
   deleteProduct: Function;
+  checkoutBasket: Function;
 }) {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalLength, setTotalLength] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let total = 0;
@@ -28,6 +32,11 @@ export function Basket({
     setTotalPrice(total);
     setTotalLength(length);
   }, [basket]);
+
+  function checkout() {
+    checkoutBasket();
+    navigate("/");
+  }
 
   return (
     <main className='grid md:grid-cols-3 px-2 py-4 gap-2 md:px-8'>
@@ -45,7 +54,10 @@ export function Basket({
       </section>
       <section className='col-span-3 md:col-span-1 mx-12 md:mx-0'>
         <div className='justify-end hidden md:flex'>
-          <button className='bg-black text-white border-2 border-black hover:bg-white hover:text-black p-2 w-1/2'>
+          <button
+            className='bg-black text-white border-2 border-black hover:bg-white hover:text-black p-2 w-1/2'
+            onClick={() => checkout()}
+          >
             Proceed To Checkout
           </button>
         </div>
@@ -84,11 +96,17 @@ export function Basket({
             <p>£{totalPrice > 30 ? totalPrice.toFixed(2) : (totalPrice + 3.99).toFixed(2)}</p>
           </div>
 
-          <button className='bg-black text-white border-2 border-black hover:bg-white hover:text-black p-2 w-full'>
+          <button
+            className='bg-black text-white border-2 border-black hover:bg-white hover:text-black p-2 w-full'
+            onClick={() => checkout()}
+          >
             Proceed to Checkout
           </button>
 
-          <button className='border-2 border-black mt-4 w-full p-2 hover:bg-slate-300 hover:border-slate-300'>
+          <button
+            className='border-2 border-black mt-4 w-full p-2 hover:bg-slate-300 hover:border-slate-300'
+            onClick={() => checkout()}
+          >
             Checkout with PayPal
           </button>
           <p className='text-xs mt-1'>
