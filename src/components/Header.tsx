@@ -127,10 +127,14 @@ export default function Header({ basket }: { basket: Object[] }) {
         <button className='not-built' aria-label='Wishlist'>
           <AiOutlineHeart className='header-icon' />
         </button>
-        <button aria-label='Basket' className='flex gap-1 items-center'>
+        <Link
+          to='/basket'
+          aria-label='Basket'
+          className='flex gap-1 items-center'
+        >
           <AiOutlineShopping className='header-icon' />
           <p>{basket.length > 99 ? "99+" : basket.length}</p>
-        </button>
+        </Link>
       </nav>
     </header>
   );

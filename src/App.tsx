@@ -8,6 +8,7 @@ import { Promo } from "./components/Promo";
 import { Search } from "./components/Search";
 import { Product } from "./components/Product";
 import { useEffect, useState } from "react";
+import { Basket } from "./components/Basket";
 
 function App() {
   const [basket, setBasket] = useState(Array<Object>);
@@ -47,6 +48,7 @@ function App() {
             path='/product/*'
             element={<Product setItemToBasket={setItemToBasket} />}
           />
+          <Route path='/basket' element={<Basket />} />
           <Route path='/' element={<HomePage />} />
           <Route path='*' element={<NoPage />} />
           <Route path='/404' element={<NoPage />} />
