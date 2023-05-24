@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { BasketInterface } from "../functions/basket";
 import { BasketComponent } from "./BasketComponent";
+import { getById } from "../functions/api";
 
 export function Basket({
   basket,
@@ -10,6 +12,23 @@ export function Basket({
   updateBasket: Function;
   deleteProduct: Function;
 }) {
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalLength, setTotalLength] = useState(0);
+
+  useEffect(() => {
+    let total = 0;
+    let length = 0;
+
+    basket.forEach((product) => {
+      const productData = getById(parseInt(product.productId));
+      total += productData!.price * parseInt(product.quantity);
+      length += parseInt(product.quantity);
+    });
+
+    setTotalPrice(total);
+    setTotalLength(length);
+  }, [basket]);
+
   return (
     <main className='grid md:grid-cols-3 px-2 py-4 gap-2 md:px-8'>
       <h2 className='col-span-3 text-2xl mb-4 ml-4'>Your Shopping Bag</h2>
@@ -36,12 +55,12 @@ export function Basket({
 
           <div className='flex justify-between mb-4'>
             <p>Subtotal</p>
-            <p className='text-lg'>£100.00</p>
+            <p className='text-lg'>£{totalPrice.toFixed(2)}</p>
           </div>
 
           <div className='flex justify-between'>
             <p>Standard Delivery</p>
-            <p>Free</p>
+            <p>{totalPrice > 30 ? "Free" : "£3.99"}</p>
           </div>
           <p>within 4 to 5 working days</p>
 
@@ -59,8 +78,8 @@ export function Basket({
 
         <section>
           <div className='flex justify-between mb-4 text-xl font-medium'>
-            <p>Total (4 items) inc. VAT</p>
-            <p>£100.00</p>
+            <p>Total ({totalLength} items) inc. VAT</p>
+            <p>£{totalPrice > 30 ? totalPrice.toFixed(2) : (totalPrice + 3.99).toFixed(2)}</p>
           </div>
 
           <button className='bg-black text-white border-2 border-black hover:bg-white hover:text-black p-2 w-full'>
