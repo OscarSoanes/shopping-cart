@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 export function BasketComponent({
   productInBasket,
   updateBasket,
+  deleteProduct,
 }: {
   productInBasket: BasketInterface;
   updateBasket: Function;
+  deleteProduct: Function;
 }) {
   const [product, setProduct] = useState(Object);
   const [image, setImage] = useState("");
@@ -61,8 +63,11 @@ export function BasketComponent({
           />
         </section>
 
-        <button className='bg-black text-white border-2 border-black hover:bg-white hover:text-black py-2 px-4'>
-          Delete
+        <button
+          className='bg-black text-white border-2 border-black hover:bg-white hover:text-black py-2 px-4'
+          onClick={() => deleteProduct(productInBasket.id)}
+        >
+          Remove
         </button>
       </div>
     </section>
