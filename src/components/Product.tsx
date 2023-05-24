@@ -149,6 +149,23 @@ export function Product() {
               </div>
             </section>
 
+            <section className='mb-8'>
+              <label className='text-xl text-gray-700'>
+                Quantity:
+                <select className='w-full h-12 p-2 rounded-none'>
+                  <option value='1'>1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='4'>4</option>
+                  <option value='5'>5</option>
+                  <option value='6'>6</option>
+                  <option value='7'>7</option>
+                  <option value='8'>8</option>
+                  <option value='9'>9</option>
+                </select>
+              </label>
+            </section>
+
             <div className='flex gap-1'>
               <button className='flex-1 p-2 bg-black text-white hover:bg-white border-2 border-black hover:text-black'>
                 Add to Cart
