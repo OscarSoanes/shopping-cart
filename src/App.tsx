@@ -10,8 +10,10 @@ import { Product } from "./components/Product";
 import { useEffect, useState } from "react";
 import { Basket } from "./components/Basket";
 
+import { BasketInterface } from "./functions/basket";
+
 function App() {
-  const [basket, setBasket] = useState(Array<Object>);
+  const [basket, setBasket] = useState(Array<BasketInterface>);
 
   function setItemToBasket(productId: string, size: string, quantity: string) {
     const newProduct = { id: productId, size: size, quantity: quantity };
@@ -44,11 +46,8 @@ function App() {
           <Route path='/shop/men' element={<Shop type='men' />} />
           <Route path='/shop/women' element={<Shop type='women' />} />
           <Route path='/search/*' element={<Search />} />
-          <Route
-            path='/product/*'
-            element={<Product setItemToBasket={setItemToBasket} />}
-          />
-          <Route path='/basket' element={<Basket />} />
+          <Route path='/product/*' element={<Product setItemToBasket={setItemToBasket} />} />
+          <Route path='/basket' element={<Basket basket={basket} />} />
           <Route path='/' element={<HomePage />} />
           <Route path='*' element={<NoPage />} />
           <Route path='/404' element={<NoPage />} />
