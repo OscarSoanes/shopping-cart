@@ -37,7 +37,7 @@ function App() {
       <Router>
         <div className='sticky z-50 top-0'>
           <Promo />
-          <Header />
+          <Header basket={basket} />
         </div>
         <Routes>
           <Route path='/shop/men' element={<Shop type='men' />} />

@@ -11,7 +11,7 @@ import {
 import { TbListSearch } from "react-icons/tb";
 import Banner from "../media/banner.webp";
 
-export default function Header() {
+export default function Header({ basket }: { basket: Object[] }) {
   const [showMobile, setShowMobile] = useState(false);
   const navigate = useNavigate();
 
@@ -129,7 +129,7 @@ export default function Header() {
         </button>
         <button aria-label='Basket' className='flex gap-1 items-center'>
           <AiOutlineShopping className='header-icon' />
-          <p>0</p>
+          <p>{basket.length > 99 ? "99+" : basket.length}</p>
         </button>
       </nav>
     </header>
