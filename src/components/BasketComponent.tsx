@@ -7,9 +7,9 @@ export function BasketComponent({ productInBasket }: { productInBasket: BasketIn
   const [image, setImage] = useState("");
 
   useEffect(() => {
-    const product = getById(parseInt(productInBasket.id));
+    const product = getById(parseInt(productInBasket.productId));
     setProduct(product);
-  }, [productInBasket.id]);
+  }, [productInBasket.productId]);
 
   useEffect(() => {
     if (!product.image) {

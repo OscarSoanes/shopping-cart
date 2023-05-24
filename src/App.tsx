@@ -11,12 +11,12 @@ import { useEffect, useState } from "react";
 import { Basket } from "./components/Basket";
 
 import { BasketInterface } from "./functions/basket";
-
+import uniqid from "uniqid";
 function App() {
   const [basket, setBasket] = useState(Array<BasketInterface>);
 
   function setItemToBasket(productId: string, size: string, quantity: string) {
-    const newProduct = { id: productId, size: size, quantity: quantity };
+    const newProduct = { id: uniqid(), productId: productId, size: size, quantity: quantity };
 
     const toSet = basket.concat(newProduct);
     setBasket(toSet);
