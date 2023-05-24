@@ -3,10 +3,10 @@ import { BasketComponent } from "./BasketComponent";
 
 export function Basket({ basket }: { basket: Array<BasketInterface> }) {
   return (
-    <main className='grid grid-cols-2'>
-      <h2 className='col-span-2'>Your Shopping Bag</h2>
+    <main className='grid md:grid-cols-3 px-2 py-4 gap-2 md:px-8'>
+      <h2 className='col-span-3 text-2xl mb-4 ml-4'>Your Shopping Bag</h2>
 
-      <section>
+      <section className='grid gap-4 col-span-2 pb-8 border-gray-300 border-b'>
         {basket.map((product, index) => (
           <BasketComponent key={index} productInBasket={product} />
         ))}

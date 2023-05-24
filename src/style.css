@@ -38,6 +38,10 @@ html, body {
   @apply border-gray-700
 }
 
+.basket-container {
+  grid-template-columns: max-content 1fr;
+}
+
 @media (min-width: 840px) {
   .images {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));

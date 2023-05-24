@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getById } from "../functions/api";
 import { BasketInterface } from "../functions/basket";
+import { Link } from "react-router-dom";
 
 export function BasketComponent({ productInBasket }: { productInBasket: BasketInterface }) {
   const [product, setProduct] = useState(Object);
@@ -20,29 +21,33 @@ export function BasketComponent({ productInBasket }: { productInBasket: BasketIn
   }, [product]);
 
   return (
-    <section className='grid grid-cols-2 gap-4'>
-      <img src={image} alt={`${product.brand} ${product.title}`} />
+    <section className='grid gap-2 basket-container md:gap-8'>
+      <Link to={`/product/${product.id}`}>
+        <img className='w-48' src={image} alt={`${product.brand} ${product.title}`} />
+      </Link>
       <div>
-        <h3>{product.name}</h3>
-        {product.price && <p>£{product.price.toFixed(2)}</p>}
+        <h3 className='text-lg font-oswald'>{product.name}</h3>
+        {product.price && <p className='text-lg mb-1'>£{product.price.toFixed(2)}</p>}
 
         <section>
-          <h4>Size:</h4>
+          <h4 className='text-gray-700'>Size:</h4>
           <CreateSelect
             options={["XXS", "XS", "S", "M", "L", "XL", "XXL", "XXXL"]}
             target={productInBasket.size}
           />
         </section>
 
-        <section>
-          <h4>Quantity:</h4>
+        <section className='mt-2 mb-4'>
+          <h4 className='text-gray-700'>Quantity:</h4>
           <CreateSelect
             options={["1", "2", "3", "4", "5", "6", "7", "8", "9"]}
             target={productInBasket.quantity}
           />
         </section>
 
-        <button>Delete</button>
+        <button className='bg-black text-white border-2 border-black hover:bg-white hover:text-black py-2 px-4'>
+          Delete
+        </button>
       </div>
     </section>
   );
@@ -50,7 +55,7 @@ export function BasketComponent({ productInBasket }: { productInBasket: BasketIn
 
 function CreateSelect({ options, target }: { options: Array<String>; target: string }) {
   return (
-    <select>
+    <select className='w-1/2 p-2 max-w-[200px] min-w-fit rounded-none'>
       {options.map((value, index) => (
         <option value='value' key={index} selected={target === value && true}>
           {value}
