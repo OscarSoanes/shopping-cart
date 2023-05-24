@@ -19,7 +19,7 @@ export default function Footer() {
       </section>
       <section className='flex-1 flex gap-8 justify-between'>
         <div className='flex-1'>
-          <h2 className='text-xl mb-4'>Help & Support</h2>
+          <h2 className='text-xl mb-4 text-center'>Help & Support</h2>
           <SmallLink
             locations={[
               "FAQ",
@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
 
         <div className='flex-1'>
-          <h2 className='text-xl mb-4'>About Us</h2>
+          <h2 className='text-xl mb-4 text-center'>About Us</h2>
           <SmallLink
             locations={[
               "About TeeFusion",
@@ -76,11 +76,11 @@ function SocialIcons() {
 
 function SmallLink({ locations }: { locations: Array<String> }) {
   return (
-    <ul className='flex flex-col gap-4'>
+    <ul className='flex flex-col gap-4 text-center'>
       {locations.map((location, index) => (
         <li
           key={index}
-          className='cursor-not-allowed bg-gray-50 p-1 rounded hover:bg-gray-100 w-32 sm:w-48'
+          className='cursor-not-allowed bg-gray-50 p-1M hover:bg-gray-100 w-32 sm:w-48 mx-auto'
         >
           {location}
         </li>
