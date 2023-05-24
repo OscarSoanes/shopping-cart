@@ -22,6 +22,21 @@ function App() {
     setBasket(toSet);
   }
 
+  function updateBasket(id: string, field: string, value: string) {
+    const modifiedBasket = [...basket];
+    const product = modifiedBasket.find((product) => product.id === id);
+
+    if (!product) {
+      return;
+    }
+
+    if (field === "size" || field === "quantity") {
+      product[field] = value;
+    }
+
+    setBasket(modifiedBasket);
+  }
+
   useEffect(() => {
     if (basket.length !== 0) {
       localStorage.setItem("basket", JSON.stringify(basket));
@@ -47,7 +62,7 @@ function App() {
           <Route path='/shop/women' element={<Shop type='women' />} />
           <Route path='/search/*' element={<Search />} />
           <Route path='/product/*' element={<Product setItemToBasket={setItemToBasket} />} />
-          <Route path='/basket' element={<Basket basket={basket} />} />
+          <Route path='/basket' element={<Basket basket={basket} updateBasket={updateBasket} />} />
           <Route path='/' element={<HomePage />} />
           <Route path='*' element={<NoPage />} />
           <Route path='/404' element={<NoPage />} />

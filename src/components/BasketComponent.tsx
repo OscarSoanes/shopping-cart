@@ -3,7 +3,13 @@ import { getById } from "../functions/api";
 import { BasketInterface } from "../functions/basket";
 import { Link } from "react-router-dom";
 
-export function BasketComponent({ productInBasket }: { productInBasket: BasketInterface }) {
+export function BasketComponent({
+  productInBasket,
+  updateBasket,
+}: {
+  productInBasket: BasketInterface;
+  updateBasket: Function;
+}) {
   const [product, setProduct] = useState(Object);
   const [image, setImage] = useState("");
 
@@ -20,6 +26,12 @@ export function BasketComponent({ productInBasket }: { productInBasket: BasketIn
     import(`../media/${product.image}`).then((image) => setImage(image.default));
   }, [product]);
 
+  function runUpdateBasket(e: React.ChangeEvent<HTMLSelectElement>, field: string) {
+    const value = e.target.value;
+
+    updateBasket(productInBasket.id, field, value);
+  }
+
   return (
     <section className='grid gap-2 basket-container md:gap-8'>
       <Link to={`/product/${product.id}`}>
@@ -34,6 +46,8 @@ export function BasketComponent({ productInBasket }: { productInBasket: BasketIn
           <CreateSelect
             options={["XXS", "XS", "S", "M", "L", "XL", "XXL", "XXXL"]}
             target={productInBasket.size}
+            field='size'
+            onClick={runUpdateBasket}
           />
         </section>
 
@@ -42,6 +56,8 @@ export function BasketComponent({ productInBasket }: { productInBasket: BasketIn
           <CreateSelect
             options={["1", "2", "3", "4", "5", "6", "7", "8", "9"]}
             target={productInBasket.quantity}
+            field='quantity'
+            onClick={runUpdateBasket}
           />
         </section>
 
@@ -53,11 +69,24 @@ export function BasketComponent({ productInBasket }: { productInBasket: BasketIn
   );
 }
 
-function CreateSelect({ options, target }: { options: Array<String>; target: string }) {
+function CreateSelect({
+  options,
+  target,
+  field,
+  onClick,
+}: {
+  options: Array<String>;
+  target: string;
+  field: string;
+  onClick: Function;
+}) {
   return (
-    <select className='w-1/2 p-2 max-w-[200px] min-w-fit rounded-none'>
+    <select
+      className='w-1/2 p-2 max-w-[200px] min-w-fit rounded-none'
+      onChange={(e) => onClick(e, field)}
+    >
       {options.map((value, index) => (
-        <option value='value' key={index} selected={target === value && true}>
+        <option value={`${value}`} key={index} selected={target === value && true}>
           {value}
         </option>
       ))}
