@@ -138,10 +138,16 @@ export function Basket({
           range!
         </p>
 
-        <Link className='bg-black block w-48 mx-auto mt-12 p-2 mb-8 text-white' to='/shop/men'>
+        <Link
+          className='bg-black block w-48 mx-auto mt-12 p-2 mb-8 text-white border-2 border-black hover:bg-white hover:text-black'
+          to='/shop/men'
+        >
           Men
         </Link>
-        <Link className='bg-black block w-48 mx-auto mt-12 p-2 mb-8 text-white' to='/shop/women'>
+        <Link
+          className='bg-black block w-48 mx-auto mt-12 p-2 mb-8 text-white border-black border-2 hover:bg-white hover:text-black'
+          to='/shop/women'
+        >
           Women
         </Link>
       </main>
