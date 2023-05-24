@@ -6,9 +6,10 @@ import {
   AiOutlineArrowLeft,
   AiOutlineArrowRight,
   AiOutlineHeart,
+  AiFillWarning,
 } from "react-icons/ai";
 
-export function Product() {
+export function Product({ setItemToBasket }: { setItemToBasket: Function }) {
   const params = useParams();
   const navigate = useNavigate();
   const id = params["*"]!;
@@ -17,6 +18,7 @@ export function Product() {
   const [data, setData] = useState(Object);
   const [images, setImages] = useState(Array<string>);
   const [selected, setSelected] = useState("");
+  const [selectedError, setSelectedError] = useState(false);
 
   useEffect(() => {
     const data = getById(parseInt(id));
@@ -65,7 +67,26 @@ export function Product() {
     const target = e.target as HTMLElement;
     const size = target.textContent!;
 
+    if (selectedError) {
+      setSelectedError(false);
+    }
+
     setSelected(size);
+  }
+
+  function addToBasket() {
+    const quantity = document.getElementById("quantity") as HTMLSelectElement;
+    const size = quantity.value;
+
+    if (!selected) {
+      setSelectedError(true);
+      return;
+    }
+
+    setSelected("");
+    quantity.value = "1";
+
+    setItemToBasket(id, selected, size);
   }
 
   return (
@@ -147,12 +168,18 @@ export function Product() {
                   </button>
                 ))}
               </div>
+              {selectedError && (
+                <div className='flex items-center gap-2 justify-center'>
+                  <AiFillWarning />
+                  <p className='font-bold'>Please select a size</p>
+                </div>
+              )}
             </section>
 
             <section className='mb-8'>
-              <label className='text-xl text-gray-700'>
+              <label htmlFor='quantity' className='text-xl text-gray-700'>
                 Quantity:
-                <select className='w-full h-12 p-2 rounded-none'>
+                <select className='w-full h-12 p-2 rounded-none' id='quantity'>
                   <option value='1'>1</option>
                   <option value='2'>2</option>
                   <option value='3'>3</option>
@@ -167,7 +194,10 @@ export function Product() {
             </section>
 
             <div className='flex gap-1'>
-              <button className='flex-1 p-2 bg-black text-white hover:bg-white border-2 border-black hover:text-black'>
+              <button
+                className='flex-1 p-2 bg-black text-white hover:bg-white border-2 border-black hover:text-black'
+                onClick={() => addToBasket()}
+              >
                 Add to Cart
               </button>
               <button className='text-3xl border-2 border-black w-10 cursor-not-allowed'>
