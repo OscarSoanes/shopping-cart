@@ -16,6 +16,7 @@ export function Product() {
   const sizes = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "XXXL"];
   const [data, setData] = useState(Object);
   const [images, setImages] = useState(Array<string>);
+  const [selected, setSelected] = useState("");
 
   useEffect(() => {
     const data = getById(parseInt(id));
@@ -58,9 +59,13 @@ export function Product() {
 
     const container = document.getElementById("overflow-container");
     container?.scroll(calculation, 0);
+  }
 
-    console.log(calculation);
-    // temp1.scroll(478 * parseInt(3), 0)
+  function selectedSize(e: React.MouseEvent) {
+    const target = e.target as HTMLElement;
+    const size = target.textContent!;
+
+    setSelected(size);
   }
 
   return (
@@ -129,12 +134,13 @@ export function Product() {
               (inc. VAT)
             </p>
             <section className='py-6'>
-              <h3 className='pb-2'>Size</h3>
+              <h3 className='pb-2 text-gray-700 text-xl'>Size:</h3>
               <div className='grid grid-cols-4 gap-1'>
                 {sizes.map((size, index) => (
                   <button
-                    className='border-gray-300 hover:border-gray-600 border h-16'
-                    onClick={(e) => console.log()}
+                    className={`${selected === size && "border-gray-600"}
+                    border-gray-300 hover:border-gray-600 border h-16`}
+                    onClick={(e) => selectedSize(e)}
                     key={index}
                   >
                     {size}
@@ -157,7 +163,7 @@ export function Product() {
             </p>
 
             <section>
-              <h3 className='text-xl font-bold'>Details</h3>
+              <h3 className='text-xl text-gray-700'>Details: </h3>
               <p className='m-2 p-4 py-8 bg-gray-100'>{data.description}</p>
             </section>
           </section>

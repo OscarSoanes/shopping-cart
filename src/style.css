@@ -34,6 +34,10 @@ html, body {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
+#selected {
+  @apply border-gray-700
+}
+
 @media (min-width: 840px) {
   .images {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
