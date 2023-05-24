@@ -41,7 +41,7 @@ export function Basket({
   }
   if (basket.length !== 0) {
     return (
-      <main className='grid md:grid-cols-3 px-2 py-4 gap-2 md:px-8'>
+      <main className='grid md:grid-cols-3 px-2 py-4 gap-2 md:gap-8 md:px-8 mb-12'>
         <h2 className='col-span-3 text-2xl mb-4 ml-4'>Your Shopping Bag</h2>
 
         <section className='grid gap-4 col-span-3 md:col-span-2 pb-8 border-gray-300 border-b'>
