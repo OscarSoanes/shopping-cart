@@ -2,13 +2,18 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { getById } from "../functions/api";
 import { useEffect, useState } from "react";
 
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import {
+  AiOutlineArrowLeft,
+  AiOutlineArrowRight,
+  AiOutlineHeart,
+} from "react-icons/ai";
 
 export function Product() {
   const params = useParams();
   const navigate = useNavigate();
   const id = params["*"]!;
 
+  const sizes = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "XXXL"];
   const [data, setData] = useState(Object);
   const [images, setImages] = useState(Array<string>);
 
@@ -114,7 +119,48 @@ export function Product() {
             ))}
           </section>
 
-          <section></section>
+          <section className='px-8 py-2'>
+            <h2 className='text-2xl font-bold mb-1'>{data.name}</h2>
+            <p className='text-gray-700 mb-4'>{data.brand}</p>
+            <p className='text-xl text-gray-600'>
+              <span className='font-bold text-black'>
+                £{data.price.toFixed(2)}{" "}
+              </span>
+              (inc. VAT)
+            </p>
+            <section className='py-6'>
+              <h3 className='pb-2'>Size</h3>
+              <div className='grid grid-cols-4 gap-1'>
+                {sizes.map((size, index) => (
+                  <button
+                    className='border-gray-300 hover:border-gray-600 border h-16'
+                    onClick={(e) => console.log()}
+                    key={index}
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
+            </section>
+
+            <div className='flex gap-1'>
+              <button className='flex-1 p-2 bg-black text-white hover:bg-white border-2 border-black hover:text-black'>
+                Add to Cart
+              </button>
+              <button className='text-3xl border-2 border-black w-10 cursor-not-allowed'>
+                <AiOutlineHeart className='mx-auto' />
+              </button>
+            </div>
+
+            <p className='py-4 text-center'>
+              Free delivery on all orders over £30 + 90-day free returns
+            </p>
+
+            <section>
+              <h3 className='text-xl font-bold'>Details</h3>
+              <p className='m-2 p-4 py-8 bg-gray-100'>{data.description}</p>
+            </section>
+          </section>
         </div>
       </main>
     )
