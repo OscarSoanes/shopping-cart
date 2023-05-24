@@ -59,10 +59,12 @@ export function Basket({
           </div>
 
           <div className='flex justify-between'>
-            <p>Standard Delivery</p>
+            <div>
+              <p>Standard Delivery</p>
+              <p className='text-sm'>within 4 to 5 working days</p>
+            </div>
             <p>{totalPrice > 30 ? "Free" : "£3.99"}</p>
           </div>
-          <p>within 4 to 5 working days</p>
 
           <label htmlFor='promoCode'>
             <p className='mt-8'>Promo Code:</p>
